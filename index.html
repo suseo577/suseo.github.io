@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sused Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #050008;
+      --magenta: #d13ee6;
+      --lilac: #c77dff;
+      --plum: #8a1f7a;
+      --text: #f3e6fa;
+      --muted: #b79cc7;
+      --pixel: "Pixelify Sans", "Courier New", monospace;
+      --body: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: var(--body);
+      line-height: 1.6;
+      background-color: var(--black);
+      background-image:
+        linear-gradient(rgba(209, 62, 230, .14) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(209, 62, 230, .14) 2px, transparent 2px);
+      background-size: 72px 72px;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--lilac); outline-offset: 3px; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: .9rem clamp(1rem, 4vw, 3rem);
+      background: var(--black);
+      border-bottom: 3px solid var(--magenta);
+    }
+    .logo { font-family: var(--pixel); font-weight: 700; font-size: 1.5rem; color: var(--lilac); text-decoration: none; }
+    nav { display: flex; gap: 1.5rem; }
+    nav a { font-family: var(--pixel); font-size: 1.1rem; text-decoration: none; color: var(--text); }
+    nav a:hover { color: var(--lilac); }
+
+    .hero { background: var(--black); }
+    .hero img {
+      display: block; width: 100%;
+      height: min(80svh, 56.25vw);
+      min-height: 320px;
+      object-fit: cover; object-position: center 40%;
+    }
+    @media (max-width: 600px) { .hero img { height: 60svh; } }
+
+    main { max-width: 960px; margin: 0 auto; padding: 4rem clamp(1rem, 4vw, 2rem) 5rem; }
+    h1, h2 { font-family: var(--pixel); font-weight: 700; color: var(--lilac); line-height: 1.15; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+    .intro { max-width: 60ch; font-size: 1.15rem; margin-bottom: 4rem; }
+    section { margin-bottom: 4rem; }
+    section p { max-width: 65ch; color: var(--muted); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .card {
+      display: block; padding: 1.4rem;
+      background: var(--black);
+      border: 3px solid var(--magenta);
+      text-decoration: none;
+      transition: transform .12s, box-shadow .12s;
+    }
+    .card:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--plum); }
+    .card h3 { font-family: var(--pixel); font-size: 1.4rem; margin: 0 0 .4rem; color: var(--text); }
+    .card p { margin: 0; color: var(--muted); }
+
+    footer { padding: 2rem; text-align: center; color: var(--muted); background: var(--black); border-top: 3px solid var(--magenta); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .card { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="#top">SUSED WEB</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#links">Links</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <!-- The image file must sit next to this index.html and be named hero.png -->
+    <img src="hero.png" alt="Susie from Deltarune striding across a neon purple grid, with the text Sused Web">
+  </div>
+
+  <main>
+    <h1 class="visually-hidden">Sused Web</h1>
+    <p class="intro">Welcome to Sused Web. Replace this line with one sentence about what your site is for.</p>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Write a short paragraph about yourself or the project here.</p>
+    </section>
+
+    <section id="links">
+      <h2>Links</h2>
+      <div class="cards">
+        <a class="card" href="#">
+          <h3>Link one</h3>
+          <p>A short description of where this goes.</p>
+        </a>
+        <a class="card" href="#">
+          <h3>Link two</h3>
+          <p>A short description of where this goes.</p>
+        </a>
+        <a class="card" href="#">
+          <h3>Link three</h3>
+          <p>A short description of where this goes.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Add your email or social media link here.</p>
+    </section>
+  </main>
+
+  <footer>Sused Web</footer>
+
+</body>
+</html>
